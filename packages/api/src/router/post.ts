@@ -14,3 +14,9 @@ export const postRouter = router({
       return ctx.prisma.post.create({ data: input });
     }),
 });
+
+export const helloRouter = router({
+  all: publicProcedure.query(() => {
+    return { message: "Hello_world" }
+  })
+})

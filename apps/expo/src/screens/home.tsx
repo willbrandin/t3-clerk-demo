@@ -74,6 +74,10 @@ const CreatePost: React.FC = () => {
 
 export const HomeScreen = () => {
   const postQuery = trpc.post.all.useQuery();
+  const messageQuery = trpc.hello.all.useQuery()
+
+  console.log(messageQuery.data?.message || "Loading Query message")
+
   const [showPost, setShowPost] = React.useState<string | null>(null);
 
   return (

@@ -4,9 +4,9 @@ const CLERK_PUBLISHABLE_KEY =
   "pk_test_YnJhdmUtbXVsZS02LmNsZXJrLmFjY291bnRzLmRldiQ";
 
 const defineConfig = (_ctx: ConfigContext): ExpoConfig => ({
-  name: "expo",
-  slug: "expo",
-  version: "1.0.0",
+  name: "t3-clerk-demo",
+  slug: "t3-clerk-demo",
+  version: "0.0.1",
   orientation: "portrait",
   icon: "./assets/icon.png",
   userInterfaceStyle: "light",
@@ -21,20 +21,22 @@ const defineConfig = (_ctx: ConfigContext): ExpoConfig => ({
   assetBundlePatterns: ["**/*"],
   ios: {
     supportsTablet: true,
-    bundleIdentifier: "your.bundle.identifier",
+    bundleIdentifier: "com.naturallyinviting.t3clerkdemo",
   },
   android: {
     adaptiveIcon: {
       foregroundImage: "./assets/icon.png",
       backgroundColor: "#2e026d",
     },
+    package: "com.naturallyinviting.t3clerkdemo",
   },
   extra: {
-    eas: {
-      projectId: "your-project-id",
-    },
     CLERK_PUBLISHABLE_KEY,
+    eas: {
+      projectId: "35e9477d-2650-4014-b738-acc6a591160b",
+    },
   },
+  owner: "williambrandin",
   plugins: ["./expo-plugins/with-modify-gradle.js"],
 });
 
